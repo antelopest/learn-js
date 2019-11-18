@@ -1,0 +1,21 @@
+Asynchronous programming in JS as of today
+
+callback
+async.js
+promise
+async/await
+generators/yield
+observable/events
+functor + chaining + composition 
+for await + Symbol.asyncIterator
+
+async.js > callbacks
+async/await > promises
+events > observable
+functor + chaining + composition
+
+Callbacks
+
+(callback) => callback(data)
+(...args, callback) => callback(err, data)
+

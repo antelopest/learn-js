@@ -1,0 +1,43 @@
+'use strict';
+
+const baseUrl = 'http://localhost:3000';
+
+// Пишем собственный fetch для Node.js
+const http = require('http');
+
+const fetch = url => new Promise((resolve, reject) => {
+  http.get(url, res => {
+
+    const code = res.statusCode;
+    if (code !== 200) return reject(new Error(`HTTP status code ${code}`));
+
+    res.on('error', reject);
+
+    const chunks = [];
+    res.on('data', chunk => {
+      chunks.push(chunk);
+    });
+
+    res.on('end', () => {
+      const json = Buffer.concat(chunks).toString();
+      try {
+        const object = JSON.parse(json);
+        resolve(object);
+      } catch (error) {
+        return reject(error);
+      }
+    });
+  });
+});
+
+const promise = [
+  fetch(baseUrl + '/person'),
+  fetch(baseUrl + '/'),
+  fetch(baseUrl + '/city'),
+];
+
+
+Promise.all(promise)
+  .then(console.log)
+  .catch(console.log)
+
