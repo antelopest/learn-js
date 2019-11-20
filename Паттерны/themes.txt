@@ -1,0 +1,12 @@
+Порождающие 
+Constructor
+Module
+Factory
+Signleton
+Структурные 
+Decorator
+Facade 
+Поведенческие
+Observer
+Mediator
+Command
