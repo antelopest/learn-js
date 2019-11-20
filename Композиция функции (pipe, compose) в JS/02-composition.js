@@ -21,3 +21,4 @@ console.log(`lower('${s}') = '${lower(s)}'`);
 console.log(`upperCapital('${s}') = '${upperCapital(s)}'`);
 console.log(`capitalize(('${s}') = '${capitalize(s)}'`);
 
+
