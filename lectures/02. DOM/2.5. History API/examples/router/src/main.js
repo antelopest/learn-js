@@ -1,40 +1,43 @@
 import './style.css';
 
-const routes = {
-    '/': '<h3>Main page</h3>',
-    '/about': '<h3>About Page</h3>',
-    '/contact': '<h3>Contact Page</h3>'
-}
+const menu = [
+    {
+        name: 'Main',
+        path: '/',
+        html: '<h3>Main page</h3>'
+    },
+    {
+        name: 'About',
+        path: '/about',
+        html: '<h3>About</h3>'
+    },
+    {
+        name: 'Contact',
+        path: '/contact',
+        html: '<h3>Contact</h3>'
+    }
+];
 
 const view = document.getElementById('view');
-const list = document.querySelectorAll('a');
+const nav = document.getElementById('menu');
 
 const getPath = () => {
     return window.location.pathname;
 }
 
 const changeMenuList = () => {
-    const path = window.location.pathname;
+    const path = getPath();
+    const list = nav.children;
 
     for (let i = 0; i < list.length; i++) {
-        list[i].classList.remove('active');
+        const a = list[i].children[0];
 
-        if (list[i].getAttribute('href') === path) {
-            list[i].classList.toggle('active');
+        a.classList.remove('active');
+
+        if (a.getAttribute('href') === path) {
+           a.classList.toggle('active');
         }
     }
-}
-
-const renderPage = () => {
-    const path = getPath();
-
-    view.innerHTML = routes[path] ||
-        '<h3>404 Page</h3>';
-}
-
-const render = () => {
-    changeMenuList();
-    renderPage();
 }
 
 const navigateTo = (path) => {
@@ -43,19 +46,46 @@ const navigateTo = (path) => {
     render();
 }
 
-document.addEventListener('click', (e) => {
-    const link = e.target.closest('a[data-link]');
+const renderManu = () => {
+    for (let i = 0; i < menu.length; i++) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
 
-    if (link) {
-        e.preventDefault();
-        navigateTo(link.getAttribute('href'));
+        a.innerText = menu[i].name;
+        a.setAttribute('href', menu[i].path);
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            navigateTo(menu[i].path);
+        });
+
+        li.appendChild(a);
+        nav.appendChild(li);
     }
-})
+}
 
-window.addEventListener('popstate', () => {
-    render();
-})
+const renderPage = () => {
+    const path = getPath();
 
-document.addEventListener('DOMContentLoaded', () => {
-    render();
-});
+    const page = menu.find(e => e.path === path);
+
+    if (page) {
+        view.innerHTML = page.html;
+    } else {
+        view.innerHTML = '<h3>404 Page</h3>';
+    }
+}
+
+const render = () => {
+    changeMenuList();
+    renderPage();
+}
+
+const initApp = () => {
+    renderManu();
+    changeMenuList();
+    renderPage();
+}
+
+window.addEventListener('popstate', render)
+document.addEventListener('DOMContentLoaded', initApp);
