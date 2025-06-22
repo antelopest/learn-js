@@ -87,5 +87,6 @@ const initApp = () => {
     renderPage();
 }
 
-window.addEventListener('popstate', render)
+window.addEventListener('popstate', render);
+
 document.addEventListener('DOMContentLoaded', initApp);
