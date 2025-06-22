@@ -59,4 +59,3 @@ window.addEventListener('popstate', () => {
 document.addEventListener('DOMContentLoaded', () => {
     render();
 });
-
