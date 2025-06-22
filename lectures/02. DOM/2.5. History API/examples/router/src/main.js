@@ -1,24 +1,62 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './style.css';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const routes = {
+    '/': '<h3>Main page</h3>',
+    '/about': '<h3>About Page</h3>',
+    '/contact': '<h3>Contact Page</h3>'
+}
 
-setupCounter(document.querySelector('#counter'))
+const view = document.getElementById('view');
+const list = document.querySelectorAll('a');
+
+const getPath = () => {
+    return window.location.pathname;
+}
+
+const changeMenuList = () => {
+    const path = window.location.pathname;
+
+    for (let i = 0; i < list.length; i++) {
+        list[i].classList.remove('active');
+
+        if (list[i].getAttribute('href') === path) {
+            list[i].classList.toggle('active');
+        }
+    }
+}
+
+const renderPage = () => {
+    const path = getPath();
+
+    view.innerHTML = routes[path] ||
+        '<h3>404 Page</h3>';
+}
+
+const render = () => {
+    changeMenuList();
+    renderPage();
+}
+
+const navigateTo = (path) => {
+    history.pushState({}, '', path);
+
+    render();
+}
+
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[data-link]');
+
+    if (link) {
+        e.preventDefault();
+        navigateTo(link.getAttribute('href'));
+    }
+})
+
+window.addEventListener('popstate', () => {
+    render();
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    render();
+});
+
