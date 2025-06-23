@@ -1,22 +1,7 @@
 import './style.css';
 
-const menu = [
-    {
-        name: 'Main',
-        path: '/',
-        html: '<h3>Main page</h3>'
-    },
-    {
-        name: 'About',
-        path: '/about',
-        html: '<h3>About</h3>'
-    },
-    {
-        name: 'Contact',
-        path: '/contact',
-        html: '<h3>Contact</h3>'
-    }
-];
+import {routes} from './routes/routes.js';
+import NotFoundPage from './pages/notfound/notfound.js';
 
 const view = document.getElementById('view');
 const nav = document.getElementById('menu');
@@ -47,16 +32,16 @@ const navigateTo = (path) => {
 }
 
 const renderManu = () => {
-    for (let i = 0; i < menu.length; i++) {
+    for (let i = 0; i < routes.length; i++) {
         const li = document.createElement('li');
         const a = document.createElement('a');
 
-        a.innerText = menu[i].name;
-        a.setAttribute('href', menu[i].path);
+        a.innerText = routes[i].name;
+        a.setAttribute('href', routes[i].path);
         a.addEventListener('click', (e) => {
             e.preventDefault();
 
-            navigateTo(menu[i].path);
+            navigateTo(routes[i].path);
         });
 
         li.appendChild(a);
@@ -67,12 +52,12 @@ const renderManu = () => {
 const renderPage = () => {
     const path = getPath();
 
-    const page = menu.find(e => e.path === path);
+    const currentPage = routes.find(e => e.path === path);
 
-    if (page) {
-        view.innerHTML = page.html;
+    if (currentPage) {
+        view.innerHTML = currentPage.page();
     } else {
-        view.innerHTML = '<h3>404 Page</h3>';
+        view.innerHTML = NotFoundPage();
     }
 }
 

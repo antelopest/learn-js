@@ -38,6 +38,11 @@ a:hover {
     text-decoration: underline;
 }
 
+a:visited {
+    text-decoration: none;
+    color: initial;
+}
+
 a.active {
     text-decoration: underline;
 }
