@@ -4,7 +4,7 @@ import stringPlugin from 'vite-plugin-string';
 export default defineConfig({
   plugins: [
     stringPlugin({
-      include: 'src/**/*.html',
+      include: './**/*.html'
     }),
   ],
 });
