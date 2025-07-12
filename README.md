@@ -71,17 +71,45 @@
 
 ### Глубокое понимание JavaScript
 
+1. Event Loop, макро и микрозадачи
+2. Hoisting, Temporal Dead Zone (TDZ)
+3. Контекст (this), bind, call, apply
+
 ### Современные возможности ES6+
+
+1. Деструктуризация массивов и объектов
+2. Spread/rest операторы
+3. Шаблонные строки
+4. Новые методы: flat, flatMap, from
 
 ### Асинхронность (продвинутый уровень)
 
+1. Promise.all, Promise.race, Promise.any
+2. Генераторы и итераторы
+3. Async iterators (for await...of)
+
 ### Фреймворки и библиотеки
+
+1. React: компоненты, состояние, хуки, маршрутизация (React Router)
+2. Vue.js или Svelte
+3. Управление состояние (Redux, Zustand)
 
 ### Node.js
 
+1. Основы серверной разработки (Express.js)
+2. Работа с файлами (fs)
+3. Создание REST API
+
 ### Тестирование
 
+1. Unit-тесты (Jest, Mocha)
+2. Тестирование асинхронного кода
+
 ### Инструменты и сборка
+
+1. Webpack, Vite, Parcel
+2. Babel, ESLint, Prettier
+3. npm, yarn, pnpm
 
 ## Экспертный уровень
 
