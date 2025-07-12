@@ -102,3 +102,35 @@
 1. Паттерны проектирования (MVC, Module, Observer)
 2. Чистая архитектура
 3. Domain-Driven Design (DDD)
+
+### Безопасность
+
+1. Защита от XSS, CSRF
+2. CORS, безопасная работа с API
+
+### TypeScript (интеграция с JS)
+
+1. Типизация кода
+2. Интерфейсы, дженерики
+3. Постепенная миграция JS-проектов
+
+### Продвинутое тестирование
+
+1. E2E-тесты (Cypress, Playwright)
+2. Интеграционные тесты
+
+### DevOps для фронтенда
+
+1. CI/CD (GitHub Actions, Jenkins)
+2. Деплой (Vercel, Netlify, AWS)
+
+### Web APIs
+
+1. WebSockets, Service Workers
+2. WebRTC, Canvas, WebGL
+
+## Общие рекомендации
+
+1. Практика (CodeWars, LeetCode)
+2. Документация (MDN Web Docs - главный источник по JS)
+3. Тренды (Medium, Dev.to, ECMAScript)
