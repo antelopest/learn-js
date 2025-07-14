@@ -16,17 +16,43 @@
 
 ### Операторы
 
+1. Арифметические (+, -, *, /, %)
+2. Сравнения (==, ===, >, <)
+3. Логические (&&, ||, !)
+4. Тернарный оператор (?:)
+
 ### Условные конструкции
+
+1. if, else, else if
+2. Оператор switch
 
 ### Циклы
 
+1. for, while, do...while
+2. break, continue
+
 ### Функции
+
+1. Объявление функций (function declaration, function expression)
+2. Параметры, значения по умолчанию, return
+3. Стрелочные функции (=>)
 
 ### Массивы
 
+1. Создание, индексация
+2. Методы: push, pop, shift, unshift, slice, splice, forEach, map, filter, reduce
+
 ### Объекты
 
+1. Создание объектов, свойства, методы
+2. Доступ к свойствам (dot notation, bracket notation)
+3. Вложенные объекты
+
 ### Работа с DOM
+
+1. Выборка элементов (getElementById, querySelector, querySelectorAll)
+2. Изменение содержимого (innerHTML, textContent)
+3. Обработка событий (addEventListener)
 
 ## Средний уровень
 
