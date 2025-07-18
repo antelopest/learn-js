@@ -1,3 +1,10 @@
+// Задача 5
+
+/*
+Напиши функцию **deepClone**, которая создаёт глубокую копию объекта или массива (включая вложенные объекты и массивы).
+Функция должна корректно копировать примитивы, объекты, массивы и учитывать циклические ссылки.
+*/
+
 const obj = {
     a: 1,
     b: {c: 2, d: [3, 4]},
@@ -79,4 +86,4 @@ console.log(cloned2); // Работает без ошибки
 console.log(cloned2 !== obj); // true
 console.log(cloned2.b !== obj.b); // true
 console.log(cloned2.b.d !== obj.b.d); // true
-console.log(cloned2.self === cloned); // true (циклическая ссылка сохранена)
+console.log(cloned2.self === cloned2); // true (циклическая ссылка сохранена)
