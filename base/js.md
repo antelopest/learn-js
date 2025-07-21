@@ -106,7 +106,7 @@
 
 ### Глубокое понимание JavaScript
 
-1. Event Loop, макро и микрозадачи
+1. [Event Loop, макро и микрозадачи](03.%20Продвинутый%20уровень/01.%20Глубокое%20понимание%20JavaScript/01.%20Event%20Loop,%20микротаски%20и%20макротаски.md)
 2. Hoisting, Temporal Dead Zone (TDZ)
 3. Контекст (this), bind, call, apply
 
