@@ -11,7 +11,7 @@
 ### Переменные и типы данных
 
 1. Объявление переменных: let, const, var
-2. Типы данных: string, number, boolean, null, undefined, bigint, symbol
+2. [Типы данных: string, number, boolean, null, undefined, bigint, symbol](01.%20Основы%20JavaScript/02.%20Переменные%20и%20типы%20данных/02.%20Типы%20данных.md)
 3. Преобразование типов (явное и неявное)
 
 ### Операторы
