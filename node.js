@@ -1,19 +1,15 @@
-function color() {
-    const colors = [
-        '#cccccc', '#000000', '#ffffff'
-    ];
-
-    let lastIndex = 0;
-
-    return function () {
-        lastIndex = lastIndex + 1 === colors.length ? 0 : ++lastIndex;
-        return colors[lastIndex];
-    }
-}
-
-const getColor = color();
-
-console.log(getColor());
-console.log(getColor());
-console.log(getColor());
-console.log(getColor());
+Promise.resolve(1)
+    .then(x => {
+        console.log('FIRST THEN');
+        console.log(x);
+        return x + 1;
+    })
+    .finally(x => {
+        console.log('FINALLY');
+        console.log(x);
+        return 100;
+    })
+    .then(x => {
+        console.log('SECOND THEN');
+        console.log(x);
+    });
