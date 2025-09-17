@@ -79,7 +79,7 @@
 
 1. Прототипное наследование
 2. Object.create, Object.assign
-3. Методы Object.keys, Object.values, Object.entries
+3. [Object.keys, Object.values, Object.entries](03.%20Продвинутый%20уровень/04.%20Объекты%20и%20прототипы/O3.%20Object.keys,%20Object.values,%20Object.entries.md)
 
 ### Модули
 
